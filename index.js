@@ -7,8 +7,6 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    console.log("You picked: " + playerSelection) 
-    console.log("Opponent picked: " + computerSelection)
     if (playerSelection == computerSelection) {
         console.log("draw")
     } else if (playerSelection == "rock" && computerSelection == "paper" || playerSelection == "paper" && computerSelection == "scissors" || playerSelection == "scissors" && computerSelection == "rock") {
@@ -22,4 +20,11 @@ let playerSelection = prompt("pick: rock, paper, or scissors")
 
 let computerSelection = getComputerChoice()
 
-playRound(playerSelection, computerSelection)
+function game() {
+    for( i = 0; i < 5; i++) {
+        playRound(playerSelection,computerSelection)
+        console.log(playerSelection,computerSelection)
+    }
+}
+
+game()
